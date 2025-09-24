@@ -1,11 +1,11 @@
 
-resource "aws_vpc" "vpc-01" {
+resource "aws_vpc" "vpc_01" {
 
     cidr_block = var.vpc_cidr
 
     tags = {
 
-        Name = "VPC-01"
+        Name = "VPC_01"
 
     }
   

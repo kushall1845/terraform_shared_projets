@@ -1,7 +1,7 @@
 
-resource "aws_subnet" "vpc-01-subnet-01" {
+resource "aws_subnet" "vpc_01_subnet_01" {
 
-    vpc_id            = aws_vpc.vpc-01.id
+    vpc_id            = aws_vpc.vpc_01.id
 
     cidr_block        = var.subnet_cidr
 
@@ -9,7 +9,7 @@ resource "aws_subnet" "vpc-01-subnet-01" {
 
     tags = {
 
-        Name = "VPC-01-Subnet-01"
+        Name = "VPC_01_Subnet_01"
 
     }
   
