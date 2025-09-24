@@ -5,7 +5,8 @@ resource "aws_instance" "server-01" {
     instance_type = "t3.micro"
     subnet_id     = aws_subnet.vpc-01-subnet-01.id
     associate_public_ip_address = true
-    key_name = "pemkeyohio"
+    
+   key_name      = aws_key_pair.generated_key.key_name
 
     #user_data = file("userdata.sh")
 
@@ -15,9 +16,11 @@ resource "aws_instance" "server-01" {
 
     }
 
-    depends_on = [ aws_internet_gateway.vpc-01-igw  ]
+    depends_on = [ aws_internet_gateway.vpc-01-igw , local_file.private_key_pem ]
   
 }
+
+
 
 
 
